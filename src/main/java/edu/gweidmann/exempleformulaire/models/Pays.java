@@ -1,7 +1,9 @@
 package edu.gweidmann.exempleformulaire.models;
 
 
-public class Pays extends Object{
+import java.io.Serializable;
+
+public class Pays implements Serializable {
     protected String nom;
     protected String iso;
     protected String image;
@@ -11,6 +13,13 @@ public class Pays extends Object{
         this.iso = iso;
         this.image = image;
     }
+    public boolean equals (Object obj){
+
+        Pays paysCompare = (Pays)obj;
+        return this.nom.equals(paysCompare.getNom());
+    }
+
+
 
     //    @Override
 //    public String toString() {
